@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YouTube Music Hotkeys</title>
+    <link rel="icon" href="icon-32.png">
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <img src="icon-48.png" alt="" width="36" height="36">
+      <span>YouTube Music Hotkeys</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Быстрые клавиши</h1>
+          <p>Чтобы клавиши работали и при неактивном окне браузера, выберите область применения «Глобально».</p>
+        </div>
+        <div class="hero-actions">
+          <button id="open-shortcuts" class="pill">Изменить быстрые клавиши</button>
+          <p id="hint" class="hint"></p>
+        </div>
+      </section>
+
+      <div id="groups" class="columns"></div>
+
+      <section class="help">
+        <h2>Как настроить</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-text">Нажмите «Изменить быстрые клавиши»</span>
+            <code id="shortcuts-url">chrome://extensions/shortcuts</code>
+          </li>
+          <li>
+            <span class="step-text">Найдите «YouTube Music - управление плеером» и нажмите на карандаш у команды</span>
+          </li>
+          <li>
+            <span class="step-text">Нажмите комбинацию или медиаклавишу</span>
+          </li>
+          <li>
+            <span class="step-text">Выберите область применения «Глобально»</span>
+          </li>
+        </ol>
+        <p class="note">
+          <span class="note-keys"><kbd>Alt</kbd><span class="plus">+</span><kbd>Shift</kbd></span>
+          <span>в Windows переключает раскладку. Если клавиша не срабатывает, попробуйте другую.</span>
+        </p>
+      </section>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

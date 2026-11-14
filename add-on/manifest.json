@@ -1,0 +1,103 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Music - управление плеером",
+  "version": "1.0.0",
+  "description": "Управление YouTube Music с клавиатуры и из всплывающего плеера",
+  "homepage_url": "https://music.youtube.com/",
+  "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+
+  "permissions": ["scripting", "notifications"],
+
+  "host_permissions": ["https://music.youtube.com/*"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+
+  "action": {
+    "default_title": "YouTube Music - управление плеером",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon-16.png",
+      "32": "icon-32.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    }
+  },
+
+  "commands": {
+    "_execute_action": {
+      "description": "Активация расширения"
+    },
+    "activate-tab": {
+      "description": "Активировать вкладку с YouTube Music"
+    },
+    "toggle-repeat": {
+      "description": "Переключить режим повтора"
+    },
+    "dislike": {
+      "description": "Не нравится"
+    },
+    "like": {
+      "description": "Мне нравится"
+    },
+    "next-song": {
+      "suggested_key": {
+        "default": "MediaNextTrack"
+      },
+      "description": "Следующий трек"
+    },
+    "toggle-playback": {
+      "suggested_key": {
+        "default": "MediaPlayPause"
+      },
+      "description": "Воспроизведение / пауза"
+    },
+    "previous-song": {
+      "suggested_key": {
+        "default": "MediaPrevTrack"
+      },
+      "description": "Предыдущий трек"
+    },
+    "seek-backward": {
+      "description": "Перемотать назад на 10 секунд"
+    },
+    "seek-forward": {
+      "description": "Перемотать вперёд на 10 секунд"
+    },
+    "toggle-mute": {
+      "description": "Выключить / включить звук"
+    },
+    "toggle-shuffle": {
+      "description": "Переключить режим случайного проигрывания"
+    },
+    "track-info": {
+      "description": "Информация о текущем треке"
+    },
+    "volume-down": {
+      "description": "Уменьшить громкость"
+    },
+    "volume-up": {
+      "description": "Увеличить громкость"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://music.youtube.com/*"],
+      "js": ["autoplay.js"],
+      "all_frames": false,
+      "run_at": "document_idle"
+    }
+  ]
+}

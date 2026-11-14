@@ -1,0 +1,21 @@
+{
+  "name": "youtube-music-hotkeys",
+  "version": "1.0.0",
+  "description": "Управление YouTube Music с клавиатуры и из всплывающего плеера",
+  "license": "CC0-1.0",
+  "private": true,
+  "scripts": {
+    "clean": "shx rm -f build/*.zip",
+    "build": "run-s clean build:bundle",
+    "build:bundle": "web-ext build -s add-on/ -a build/",
+    "lint": "run-s lint:*",
+    "lint:standard": "standard --fix \"add-on/*.js\"",
+    "lint:web-ext": "web-ext lint -s add-on/"
+  },
+  "devDependencies": {
+    "npm-run-all": "4.1.5",
+    "shx": "0.3.3",
+    "standard": "16.0.4",
+    "web-ext": "8.8.0"
+  }
+}
